@@ -4,7 +4,7 @@
 
 echo "Please enter your Username:"
 read Username
-echo "Hi, My Username is %Username"
+echo "Hi, My Username is $Username"
 
 #giving pwd secrectly by using -s
 
