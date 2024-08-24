@@ -1,0 +1,8 @@
+#!/bin/bash
+#Instead of giving the inputs/values inside the script, we are trying to give at the run time.
+
+Person1=$1
+Person2=$2
+
+echo "$1:: Hi $2, How are you?"
+echo "$2:: Hello $1, I'm good, How do you do?"
