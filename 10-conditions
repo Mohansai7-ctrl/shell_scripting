@@ -24,7 +24,7 @@ check(){
 echo "hi"
 
 #Deletion:
-check
+check $?
 
 if [ $? -eq 0 ]
 then
@@ -32,7 +32,8 @@ then
     echo "Removing $Number1 from $Number2, result is: $(($Number1-$Number2))"
 else
     #z=$(($Number2-$Number1))
-    echo "Removing $Number2 from $Number1, result is: $(($Number2-$Number1))"
+    echo "Removing $Number2 from $Number1, result is: $
+    (($Number2-$Number1))"
 fi
 
 #Multiplication:
