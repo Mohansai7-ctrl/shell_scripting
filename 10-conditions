@@ -34,8 +34,12 @@ a=$(($Number1*$Number2))
 echo " Multiplying the $Number1 with $Number2, result is: $a"
 
 #Division:
+check()
 b=$(($Number1/$Number2))
 echo " Dividing the $Number1 with $Number2, result is: $b"
+c=$(($Number2/$Number1))
+echo " Dividing the $Number2 with $Number1, result is: $c"
+
 
 
 
