@@ -10,11 +10,11 @@ z=$(date +%m)
 a=$(date +%M)
 b=$(date +%h)
 c=$(date +%H)
-d=$(date +%date)
+d=$(date +%I)
 e=$(date +%D)
 f=$(date +%y)
 g=$(date +%Y)
 echo "Today's date in another format: $x"
 
-echo "$y $z"
+echo "$y $z $a $b $c $d $e $f $g"
 
