@@ -2,18 +2,18 @@
 
 #Doing default commands in linux/shell scripting
 
-i=$date
+date
 
 x=$(date +%F)
 y=$(date +%d)
-z=$($i +%m)
-a=$($i +%M)
-b=$($i +%h)
-c=$($i +%H)
-d=$($i +%I)
-e=$($i +%D)
-f=$($i +%y)
-g=$($i +%Y)
+z=$(date +%m)
+a=$(date +%M)
+b=$(date +%h)
+c=$(date +%H)
+d=$(date +%date)
+e=$(date +%D)
+f=$(date +%y)
+g=$(date +%Y)
 echo "Today's date in another format: $x"
 
 echo "$y $z"
