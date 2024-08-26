@@ -36,7 +36,7 @@ if [ $? -ne 0 ]
             echo "still has some isssue in installing git, please check it with priority before proceeding to next"
             exit 1
       else
-          echo "$G Success...$N Hurray! your service git is installed successfully without any issues... $N"
+          echo "$G Success $N Hurray! your service git is installed successfully without any issues..."
       fi
   else
   echo "Git is already installed, nothing to do"
