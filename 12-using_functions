@@ -50,3 +50,12 @@ then
 
 fi
 
+echo "enabling your installed server software httpd"
+systemctl enable httpd
+
+echo "starting your httpd service"
+systemctl start httpd
+
+echo "checking the statu of installed httpd service"
+systemctl status httpd
+
