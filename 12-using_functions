@@ -70,3 +70,10 @@ then
     echo -e "$R Error ... your httpd is not running, pls start the service asap $N"
 fi
 
+echo "$@"
+echo "$#"
+echo "$0"
+echo "$$"
+echo "$!"
+echo "$?"
+
