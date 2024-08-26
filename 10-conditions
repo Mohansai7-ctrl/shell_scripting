@@ -41,15 +41,15 @@ a=$(($Number1*$Number2))
 echo " Multiplying the $Number1 with $Number2, result is: $a"
 
 #Division:
-check
+#check
 
-if [ $? -ne 0 ]
+if [ check $? -eq 0 ]
 then
-b=$(($Number1/$Number2))
-echo " Dividing the $Number1 with $Number2, result is: $b"
+    b=$(($Number1/$Number2))
+    echo " Dividing the $Number1 with $Number2, result is: $b"
 else
-c=$(($Number2/$Number1))
-echo " Dividing the $Number2 with $Number1, result is: $c"
+    c=$(($Number2/$Number1))
+    echo " Dividing the $Number2 with $Number1, result is: $c"
 fi
 
 
