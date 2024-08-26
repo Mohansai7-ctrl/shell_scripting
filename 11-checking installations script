@@ -37,3 +37,23 @@ if [ $? -ne 0 ]
   echo "Git is already installed, nothing to do"
 
 fi
+
+
+dnf list installed mysql
+
+if [ $? -ne 0 ]
+  then
+      echo "mysql is not installed, pls install it"
+
+      dnf install mysql -y
+      if [ $? -ne 0 ]
+         then
+            echo "still has some isssue in installing mysql, please check it with priority before proceeding to next"
+            exit 1
+      else
+          echo "Hurray! your service mysql is installed successfully without any issues"
+      fi
+  else
+  echo "mysql is already installed, nothing to do"
+
+fi
