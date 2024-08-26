@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# we are checking the below in sequence
+# either script has root access or not?
+# if yes proceed next by checking git installed or not
+# if not installed, giving command to install it
+# after installing need to check again, whether it is installed or not.
+
+# in the same way need to check whether mysql is installed or not
+# if installed print as mysql is already installed, nothing to do further.
+
+userid=$(id -u)
+
+if [ $userid -ne 0]
+then
+echo " You are not having root access, pls provide root access"
+exit 1
+else
+echo "You can proceed next as you are having the root access"
+
+dnf list installed git
+
+if [ $? -ne 0 ]
+then
+echo "git is not installed, pls install it"
+dnf install git -y
+if [ $? -ne 0 ]
+echo "still has some isssue in installing git, please check it with priority before proceeding to next"
+else
+echo "Hurray! your service git is installed successfully without any issues"
