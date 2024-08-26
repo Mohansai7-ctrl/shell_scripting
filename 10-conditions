@@ -26,13 +26,13 @@ echo "hi"
 #Deletion:
 #check $?
 
-if [ check $? == 0 ]
+if [ check $? -eq 0 ]
 then
-    #y=$(($Number1-$Number2))
-    echo "Removing $Number1 from $Number2, result is: $(($Number1-$Number2))"
+    y=$(($Number1-$Number2))
+    echo "Removing $Number1 from $Number2, result is: $y"
 else
-    #z=$(($Number2-$Number1))
-    echo "Removing $Number2 from $Number1, result is: $
+    z=$(($Number2-$Number1))
+    echo "Removing $Number2 from $Number1, result is: $z"
     (($Number2-$Number1))"
 fi
 
