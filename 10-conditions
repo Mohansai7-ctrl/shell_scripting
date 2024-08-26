@@ -14,12 +14,14 @@ echo "Sum of provided numbers, $Number1 and $Number2 is : $x"
 check(){
     if [ $Number1 -gt $Number2 ]
     then
-    echo "number1 is greater than number2"
-    exit 0
+        echo "number1 is greater than number2"
+        exit 0
     else
     exit 1
     fi
 }
+
+
 
 #Deletion:
 check
