@@ -22,7 +22,7 @@ check(){
 }
 
 #Deletion:
-check()
+check
 if [ $? -eq 0 ]
 then
 y=$(($Number1-$Number2))
@@ -37,7 +37,7 @@ a=$(($Number1*$Number2))
 echo " Multiplying the $Number1 with $Number2, result is: $a"
 
 #Division:
-check()
+check
 if [ $? -eq 0 ]
 then
 b=$(($Number1/$Number2))
