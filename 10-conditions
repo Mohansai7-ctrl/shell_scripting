@@ -24,9 +24,9 @@ check(){
 echo "hi"
 
 #Deletion:
-check $?
+#check $?
 
-if [ $? == 0 ]
+if [ check $? == 0 ]
 then
     #y=$(($Number1-$Number2))
     echo "Removing $Number1 from $Number2, result is: $(($Number1-$Number2))"
