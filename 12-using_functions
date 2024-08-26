@@ -1,0 +1,52 @@
+#!/bin/bash
+
+#checking root access
+# then checking git installed or not, if not will install
+# in the same way will check and install mysql respectively.
+
+validate(){
+    if [ $1 -ne 0 ]
+    then
+        echo -e "$2 is $R Failed $N"
+        exit 1
+
+    else
+        echo -e "$2 is $G Successfully Installed $N"
+    fi
+}
+
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
+
+userid=$(id -u)
+
+if [ $userid -ne 0]
+then
+    echo "You are not logged as root user, Please swith to root user to proceed further."
+    exit 1
+else
+    echo -e "$G Proceed further, as you logged or switched as root user $N"
+fi
+
+#checking git and mysql installed or not, if not will install
+
+dnf list installed git
+
+if [ $? -ne 0 ]
+then
+    echo "git is not installed unfortunately, pls install it to proceed further"
+    dnf install git -y
+    validate $? "Your git"
+fi
+
+dnf list installed httpd
+
+if [ $? -ne 0 ]
+then
+    echo -e "$R Httpd is not installed, Pls install it $N"
+    dnf install httpd -y
+    validate $? "your server software httpd"
+
+fi
+
