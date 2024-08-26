@@ -11,12 +11,13 @@
 
 userid=$(id -u)
 
-if [ $userid -ne 0]
+if [ $userid -ne 0 ]
 then
 echo " You are not having root access, pls provide root access"
 exit 1
 else
 echo "You can proceed next as you are having the root access"
+fi
 
 dnf list installed git
 
@@ -28,3 +29,6 @@ if [ $? -ne 0 ]
 echo "still has some isssue in installing git, please check it with priority before proceeding to next"
 else
 echo "Hurray! your service git is installed successfully without any issues"
+fi
+
+fi
