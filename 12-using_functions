@@ -59,3 +59,14 @@ systemctl start httpd
 echo "checking the statu of installed httpd service"
 systemctl status httpd
 
+echo "stopping the httpd service"
+systemctl stop httpd
+
+echo "checking the status again of httpd by using failed word"
+t=$(systemctl status httpd | grep inactive)
+
+if [ $t ! == active ]
+then
+    echo "your httpd is not running, pls start the service asap"
+fi
+
