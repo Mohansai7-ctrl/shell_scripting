@@ -11,7 +11,7 @@ x=$(($Number1+$Number2))
 echo "Sum of provided numbers, $Number1 and $Number2 is : $x"
 
 #Deletion:
-If [ $Number1 -gt $Number2 ]
+If [ ($Number1 -gt $Number2) ]
 
 y=$(($Number1-$Number2))
 echo "Removing $Number1 from $Number2, result is: $y"
