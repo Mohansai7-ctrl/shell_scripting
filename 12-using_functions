@@ -63,10 +63,10 @@ echo "stopping the httpd service"
 systemctl stop httpd
 
 echo "checking the status again of httpd by using failed word"
-t=$(systemctl status httpd | grep inactive)
+systemctl status httpd
 
-if [ $t ! == active ]
+if [ $? -ne 0 ]
 then
-    echo "your httpd is not running, pls start the service asap"
+    echo -e "$R Error ... your httpd is not running, pls start the service asap $N"
 fi
 
