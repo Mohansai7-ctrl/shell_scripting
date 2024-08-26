@@ -48,7 +48,7 @@ dnf list installed mysql
 
 if [ $? -ne 0 ]
   then
-      echo "$R Error $N mysql is not installed, pls install it"
+      echo -e "$R Error $N mysql is not installed, pls install it"
 
       dnf install mysql -y
       if [ $? -ne 0 ]
@@ -56,7 +56,7 @@ if [ $? -ne 0 ]
             echo "still has some isssue in installing mysql, please check it with priority before proceeding to next"
             exit 1
       else
-          echo "$Y Hurray! $N your service mysql is installed successfully without any issues"
+          echo -e "$Y Hurray! $N your service mysql is installed successfully without any issues"
       fi
   else
   echo "mysql is already installed, nothing to do"
