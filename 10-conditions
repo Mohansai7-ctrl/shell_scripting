@@ -23,7 +23,7 @@ check(){
 
 #Deletion:
 check()
-if [ check $? -eq 0]
+if [ $? -eq 0 ]
 then
 y=$(($Number1-$Number2))
 echo "Removing $Number1 from $Number2, result is: $y"
@@ -38,7 +38,7 @@ echo " Multiplying the $Number1 with $Number2, result is: $a"
 
 #Division:
 check()
-if [ check $? -eq 0]
+if [ $? -eq 0 ]
 then
 b=$(($Number1/$Number2))
 echo " Dividing the $Number1 with $Number2, result is: $b"
