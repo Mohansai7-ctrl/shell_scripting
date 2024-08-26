@@ -15,19 +15,22 @@ check(){
     if [ $Number1 -gt $Number2 ]
     then
     echo "number1 is greater than number2"
+    exit 0
     else
-    continue
+    exit 1
     fi
 }
 
 #Deletion:
 check()
+if [ check $? -eq 0]
+then
 y=$(($Number1-$Number2))
 echo "Removing $Number1 from $Number2, result is: $y"
-
+else
 z=$(($Number2-$Number1))
 echo "Removing $Number2 from $Number1, result is: $z"
-
+fi
 
 #Multiplication:
 a=$(($Number1*$Number2))
@@ -35,10 +38,14 @@ echo " Multiplying the $Number1 with $Number2, result is: $a"
 
 #Division:
 check()
+if [ check $? -eq 0]
+then
 b=$(($Number1/$Number2))
 echo " Dividing the $Number1 with $Number2, result is: $b"
+else
 c=$(($Number2/$Number1))
 echo " Dividing the $Number2 with $Number1, result is: $c"
+fi
 
 
 
