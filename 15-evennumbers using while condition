@@ -5,12 +5,13 @@
 echo "Please enter your Number till that you want to print event numbers"
 read number
 echo "You entered this $number number"
+i =1
 
-
-while [ i=1 ; i -lt $number ; i++ ]
+while [ $i -lt $number ]
 do
 if [ $((i%2)) == 0]
 then 
     echo "Even numbers are: $i"
 fi
+i++
 done
