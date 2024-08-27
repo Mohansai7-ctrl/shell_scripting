@@ -13,5 +13,5 @@ if [ $((i%2)) == 0]
 then 
     echo "Even numbers are: $i"
 fi
-i++
+((i++))
 done
