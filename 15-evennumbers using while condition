@@ -2,16 +2,16 @@
 
 #Printing even numbers till the provided number using while condition
 
-echo "Please enter your Number till that you want to print event numbers"
-read number
-echo "You entered this $number number"
-i=1
+# echo "Please enter your Number till that you want to print event numbers"
+# read number
+# echo "You entered this $number number"
+# i=1
 
-while [ $i -lt $number ]
-do
-if [ $(($i%2)) == 0]
-then 
-    echo "Even numbers are: $i"
-fi
-((i++))
-done
+# while [ $i -lt $number ]
+# do
+# if [ $(($i%2)) == 0]
+# then 
+#     echo "Even numbers are: $i"
+# fi
+# ((i++))
+# done
