@@ -39,4 +39,4 @@ do
     echo "As these are older than 14 days, deleting these files: $files"
     #rm -rf $files
 
-done << $LOG_FILE
+done <<< $LOG_FILE
