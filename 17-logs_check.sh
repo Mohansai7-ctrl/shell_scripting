@@ -35,7 +35,7 @@ LOG_FILE=$(find $LOG_FOLDER -name "*.log" -mtime +14)
 echo "This directory consists of these files: $LOG_FILE"
 
 
-cp /home/ec2-user/logs /home/ec2-user/logs_backup.zip
+cp -r /home/ec2-user/logs /home/ec2-user/logs_backup.zip
 echo $?
 echo "$Y For safer side, taking up the logs as backup before deleting them $N"
 
@@ -46,3 +46,4 @@ do
     rm -rf $files
 
 done <<< $LOG_FILE
+
