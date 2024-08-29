@@ -26,7 +26,7 @@ else
 fi
 
 #Checking source dir exists or not
-if [ ! -d $SOURCE_DIR]
+if [ ! -d $SOURCE_DIR ]
 then
     echo "Pls cross check the source dir, as it is not present"
     exit 1
@@ -35,7 +35,7 @@ else
 fi
 
 #Checking Destination dir exists or not.
-if [ ! -d $DESTINATION_DIR]
+if [ ! -d $DESTINATION_DIR ]
 then
     echo "Pls cross check the Destination dir, as it is not present"
     exit 1
