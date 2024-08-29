@@ -8,6 +8,7 @@ Y="\e[33m"
 B="\e[34m"
 N="\e[0m"
 
+
 CHECK_ROOT(){
     if [ $userid -ne 0 ]
     then
@@ -33,10 +34,14 @@ fi
 LOG_FILE=$(find $LOG_FOLDER -name "*.log" -mtime +14)
 echo "This directory consists of these files: $LOG_FILE"
 
+mkdir -p /home/ec2-user/logs_backup
+cp /home/ec2-user/logs /home/ec2-user/logs_backup
+echo "$Y For safer side, taking up the logs as backup before deleting them $N"
+
 
 while IFS= read -r files
 do
     echo "As these are older than 14 days, deleting these files: $files"
-    #rm -rf $files
+    rm -rf $files
 
 done <<< $LOG_FILE
