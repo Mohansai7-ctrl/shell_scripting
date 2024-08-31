@@ -4,7 +4,7 @@ SOURCE_DIR=$1
 DESTINATION_DIR=$2
 DAYS=${3:-14}
 
-TIMESTAMP=$(dat +%Y-%m-%d-%H-%M-%S)
+TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 ZIP_FILE=$DESTINATION_DIR/app-logs-$TIMESTAMP.zip
 
 CHECKS(){
@@ -54,7 +54,7 @@ then
     else
         echo "Some issue with zipping the file, need to check it"
     fi
-    
+
 else
     echo "No files found which are older than 14 days"
 fi
