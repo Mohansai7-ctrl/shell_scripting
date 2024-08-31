@@ -39,7 +39,7 @@ fi
 
 LOG_FILES=$(find ${SOURCE_DIR} -name "*.log" -mtime +14)
 
-if [ ! -z ${LOG_FILES} ]
+if [[ ! -z ${LOG_FILES} ]]
 then
     echo "Yes, this directory consists of older files which are more than $DAYS"
     $LOG_FILES | zip "$ZIP_FILE" -@
