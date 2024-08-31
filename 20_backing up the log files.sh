@@ -21,7 +21,7 @@ INPUTS(){
     fi
 }
 
-INPUTS
+#INPUTS
 
 if [ -d $SOURCE_DIR ]
 then
