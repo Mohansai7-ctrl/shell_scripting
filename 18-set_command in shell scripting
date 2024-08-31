@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#using set -e so that when the script fails at any line, it stops executing at that line itself
+set -e
+
+Y="\e[32m"
+N="\e[om"
+
+failed(){
+    echo -e "$Y script stopped as failed at $1:$2 $N"
+}
+
+trap 'failed "$LINENO" "$BASH_COMMAND" ' ERR
+
+echo "Hi ra"
+
+echo hello
+
+echoo "gaaf"
+
+
