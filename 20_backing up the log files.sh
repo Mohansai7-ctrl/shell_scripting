@@ -12,7 +12,7 @@ CHECKS(){
 }
 
 INPUTS(){
-    if [[ $# -lt 2 ]]
+    if [ $# -lt 2 ]
     then
         echo " You have to provide minimum two arguments in this format: <sh 20_backing up the log files.sh> <Source directory path> <Destination directory path> <files which are older than no of days(optional)>"
         exit 1
@@ -21,7 +21,7 @@ INPUTS(){
     fi
 }
 
-#INPUTS
+INPUTS
 
 if [ -d $SOURCE_DIR ]
 then
@@ -39,7 +39,7 @@ fi
 
 LOG_FILES=$(find ${SOURCE_DIR} -name "*.log" -mtime +14)
 
-if [ ! -z $LOG_FILES ]
+if [ ! -z ${LOG_FILES} ]
 then
     echo "Yes, this directory consists of older files which are more than $DAYS"
     $LOG_FILES | zip "$ZIP_FILE" -@
