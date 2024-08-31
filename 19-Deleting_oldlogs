@@ -4,10 +4,10 @@
 # then checking is it contains the files which are older than 14
 # if yes then deleting those files by reading each file
 LOGS="/home/ec2-user/logs"
-mkdir -p $LOGS
+#mkdir -p $LOGS
 OLDER_FILES=$(find ${LOGS} -name "*.log" -mtime +14)
 
-echo $OLDER_FILES
+echo "$OLDER_FILES"
 
 
 if [ -d $LOGS ]
@@ -17,7 +17,7 @@ else
     echo "doesn't exist"
 fi
 
-if [ ! -z ${OLDER_FILES} ]
+if [ ! -z $OLDER_FILES ]
 then
     echo "Deleting the files as files which are older than 14 days are found"
     # while IFS= read -r file
