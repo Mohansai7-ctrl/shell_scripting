@@ -12,7 +12,6 @@ echo $OLDER_FILES
 
 if [ -d $LOGS ]
 then    
-    echo "This logs directory contains the logs, now will check are these older than 14 days are not"
     if [ ! -z ${OLDER_FILES} ]
     then
         echo "Deleting the files as files which are older than 14 days are found"
