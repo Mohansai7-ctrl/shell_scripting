@@ -5,7 +5,7 @@ DESTINATION_DIR=$2
 DAYS=${3:-14}
 
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
-ZIP_FILE=$DESTINATION_DIR/app-logs-$TIMESTAMP.zip
+ZIP_FILE=$DESTINATION_DIR-$TIMESTAMP.zip
 
 CHECKS(){
     echo "Directory exists"
