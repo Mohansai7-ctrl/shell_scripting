@@ -12,7 +12,7 @@ CHECKS(){
 }
 
 INPUTS(){
-    if [ $# -lt 2 ]
+    if [[ $# -lt 2 ]]
     then
         echo " You have to provide minimum two arguments in this format: <sh 20_backing up the log files.sh> <Source directory path> <Destination directory path> <files which are older than no of days(optional)>"
         exit 1
