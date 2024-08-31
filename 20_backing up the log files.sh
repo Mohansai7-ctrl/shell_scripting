@@ -37,7 +37,7 @@ else
     echo "Destination dir doesn't exists"
 fi
 
-LOG_FILES=$(find $SOURCE_DIR -name "*.log" -mtime +14)
+LOG_FILES=$(find ${SOURCE_DIR} -name "*.log" -mtime +14)
 
 if [ ! -z $LOG_FILES ]
 then
