@@ -17,7 +17,7 @@ else
     echo "doesn't exist"
 fi
 
-if [[ ! -z $OLDER_FILES ]]
+if [[ -n $OLDER_FILES ]]
 then
     echo "Found the older files"
 
