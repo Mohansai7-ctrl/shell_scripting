@@ -37,12 +37,12 @@ else
     echo "Destination dir doesn't exists"
 fi
 
-LOG_FILES=$(find $SOURCE_DIR -name "*.log" -mtime $DAYS)
+LOG_FILES=$(find $SOURCE_DIR -name "*.log" -mtime +14)
 
 if [ ! -z $LOG_FILES ]
 then
     echo "Yes, this directory consists of older files which are more than $DAYS"
-    $LOG_FILES | zip $ZIP_FILE -@
+    $LOG_FILES | zip "$ZIP_FILE" -@
     if [ -f $ZIP_FILE ]
     then
         echo "As zip file exists, going to delete older files from source directory"
