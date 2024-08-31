@@ -21,4 +21,7 @@ echoo "gaaf"
 
 echo hello
 
+#If you run this script, as you used trap command, at line 20, it will stop as command name is wrong and wont proceed to the next line 22
+
+
 
