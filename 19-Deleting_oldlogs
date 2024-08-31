@@ -5,7 +5,7 @@
 # if yes then deleting those files by reading each file
 LOGS="/home/ec2-user/logs"
 #mkdir -p $LOGS
-OLDER_FILES=$(find ${LOGS} -name "*.log" -mtime +14)
+OLDER_FILES=$(find $LOGS -name "*.log" -mtime +14)
 
 echo "$OLDER_FILES"
 
@@ -20,7 +20,7 @@ fi
 if [ ! -z $OLDER_FILES ]
 then
     echo "good this one"
-    
+
     # while IFS= read -r file
     # do
     # echo "14 days older files are: $file"
