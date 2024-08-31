@@ -23,14 +23,14 @@ INPUTS(){
 
 INPUTS
 
-if [ -d SOURCE_DIR ]
+if [ -d $SOURCE_DIR ]
 then
     CHECKS
 else
     echo "Source dir doesn't exists"
 fi
 
-if [ -d DESTINATION_DIR ]
+if [ -d $DESTINATION_DIR ]
 then
     CHECKS
 else
