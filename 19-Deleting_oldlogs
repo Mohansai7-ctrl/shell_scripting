@@ -18,7 +18,9 @@ else
 fi
 
 if [ ! -z $OLDER_FILES ]
-echo "Deleting the files as files which are older than 14 days are found"
+then
+    echo "good this one"
+    
     # while IFS= read -r file
     # do
     # echo "14 days older files are: $file"
