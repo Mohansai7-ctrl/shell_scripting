@@ -7,6 +7,7 @@ LOGS="/home/ec2-user/logs"
 mkdir -p $LOGS
 OLDER_FILES=$(find ${LOGS} -name "*.log" -mtime +14)
 
+echo $OLDER_FILES
 
 
 if [ -d $LOGS ]
