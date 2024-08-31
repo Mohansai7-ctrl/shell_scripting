@@ -5,7 +5,7 @@ DESTINATION_DIR=$2
 DAYS=${3:-14}
 
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
-ZIP_FILE=$DESTINATION_DIR-$TIMESTAMP.zip
+ZIP_FILE="$DESTINATION_DIR-$TIMESTAMP.zip"
 
 CHECKS(){
     echo "Directory exists"
@@ -21,20 +21,20 @@ INPUTS(){
     fi
 }
 
-#INPUTS
+INPUTS
 
 if [ -d SOURCE_DIR ]
 then
     CHECKS
 else
-    echo "Dir doesn't exists"
+    echo "Source dir doesn't exists"
 fi
 
 if [ -d DESTINATION_DIR ]
 then
     CHECKS
 else
-    echo "Dir doesn't exists"
+    echo "Destination dir doesn't exists"
 fi
 
 LOG_FILES=$(find $SOURCE_DIR -name "*.log" -mtime $DAYS)
