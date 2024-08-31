@@ -4,10 +4,11 @@
 set -e
 
 Y="\e[32m"
-N="\e[om"
+N="\e[0m"
 
 failed(){
     echo -e "$Y script stopped as failed at $1:$2 $N"
+    
 }
 
 trap 'failed "$LINENO" "$BASH_COMMAND" ' ERR
@@ -17,5 +18,7 @@ echo "Hi ra"
 echo hello
 
 echoo "gaaf"
+
+echo hello
 
 
