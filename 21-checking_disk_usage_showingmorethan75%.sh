@@ -9,8 +9,8 @@
 DISK_USAGE=$(du -hT | grep xfs)
 Threshold=5
 
-$G="\e[32m"
-$N="\e[0m"
+G="\e[32m"
+N="\e[0m"
 
 while IFS= read -r line
 do
