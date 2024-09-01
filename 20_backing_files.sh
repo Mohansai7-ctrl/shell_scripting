@@ -3,6 +3,8 @@
 SOURCE_DIR=$1
 DESTINATION_DIR=$2
 DAYS=${3:-14} #Here user can provide $3 as optional, if user didnt provide this then 14 can be taken as default days
+#-mtime +14 -> means older than 14 days
+#-mtime -14 -> last 14 days or lesser than 14 days
 
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 ZIP_FILE="$DESTINATION_DIR/logs_backup-$TIMESTAMP.zip"
@@ -68,23 +70,7 @@ else
     echo "No files found which are older than 14 days"
 fi
 
-# SOURCE_DIR=$1
-# DEST_DIR=$2
-# DAYS=${3:-14} #if $3 is empty, default is 14 days.
-# TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 
-# USAGE(){
-#     echo -e "$R USAGE:: $N sh 19-backup.sh <source> <destination> <days(optional)>"
-# }
-# #check the source and destination are provided
-
-# if [ $# -lt 2 ]
-# then
-#     USAGE
-#     exit 1
-# else
-#     echo "Provided required arguments, hence proceeding further"
-# fi
 
 
 
