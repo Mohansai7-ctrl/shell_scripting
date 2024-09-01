@@ -2,7 +2,7 @@
 
 SOURCE_DIR=$1
 DESTINATION_DIR=$2
-DAYS=${3:-14}
+DAYS=${3:-14} #Here user can provide $3 as optional, if user didnt provide this then 14 can be taken as default days
 
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 ZIP_FILE="$DESTINATION_DIR-$TIMESTAMP.zip"
@@ -21,7 +21,7 @@ INPUTS(){
     fi
 }
 
-#INPUTS
+INPUTS
 
 if [ -d $SOURCE_DIR ]
 then
