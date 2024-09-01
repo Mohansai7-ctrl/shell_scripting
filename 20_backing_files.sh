@@ -55,7 +55,7 @@ then
     if [ -f $ZIP_FILE ]
     then
         echo -e "$Y As zip file exists, going to delete older files from source directory $N"
-        sudo chmod +x .log
+        sudo chmod +x *.log
         while IFS= read -r file
         do
         echo "As zipping to destination folder done, now deleting these older files from source directory"
