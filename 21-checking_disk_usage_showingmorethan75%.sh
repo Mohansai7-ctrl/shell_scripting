@@ -6,7 +6,7 @@
 
 
 
-DISK_USAGE=$(du -hT | grep xfs)
+DISK_USAGE=$(df -hT | grep xfs)
 Threshold=5
 
 G="\e[32m"
