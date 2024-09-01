@@ -15,7 +15,7 @@ N="\e[0m"
 
 while IFS= read -r line
 do
-usage=$(echo $line | awk -F " " '{print $6F}' | cut -d "%" -f1)
+usage=$(echo $line | awk -F " " '{print $6F}' | cut -d "%" -f1) #Now it checks line by line
 Partition=$(echo $line | awk -F " " '{print $NF}')
 filesystems=$(echo $line | cut -d " " -f1)
 
