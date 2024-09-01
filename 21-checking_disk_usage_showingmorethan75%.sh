@@ -17,10 +17,11 @@ while IFS= read -r line
 do
 usage=$(echo $line | awk -F " " '{print $6F}' | cut -d "%" -f1)
 Partition=$(echo $line | awk -F " " '{print $NF}')
+filesystems=$(echo $line | cut -d " " -f1)
 
 if [ $usage -gt $Threshold ]
 then
-    echo -e "$G The file systems which are consuming more disk usage are: $usage and those are mounted on $Partition $N "
+    echo -e "$G The file systems $filesystems which are consuming more disk usage are: $usage and those are mounted on $Partition $N "
 fi
 
 
