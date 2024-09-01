@@ -14,7 +14,7 @@ N="\e[0m"
 
 while IFS= read -r line
 do
-usage=$($line | grep xfs | awk -F " " '{print $6F}' | cut -d "%" -F1)
+usage=$($line | grep xfs | awk -F " " '{print $6F}' | cut -d "%" -f1)
 Partition=$($line | grep xfs | awk -F " " '{print $NF}')
 
 if [[ $usage -ge $Threshold ]]
