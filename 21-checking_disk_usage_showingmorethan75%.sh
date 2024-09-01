@@ -18,7 +18,8 @@ usage=$($DISK_USAGE | awk -F " " '{print $6F}')
 Partition=$($DISK_USAGE | awk -F " " '{print $NF}')
 
 if [ $usage -gt $Threshold ]
-echo -e "$G The file systems which are consuming more disk usage are: $usage and those are mounted on $Partition $N"
+then
+    echo -e "$G The file systems which are consuming more disk usage are: $usage and those are mounted on $Partition $N "
 fi
 
 
