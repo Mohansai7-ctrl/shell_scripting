@@ -7,15 +7,16 @@
 
 
 DISK_USAGE=$(df -hT | grep xfs)
-Threshold=5
+Threshold=5 #Here we took threshold as 5, but in real time projects defualt threshold value is 75% means we should check the filesystems which has exceed the disk usage of 75%
+
 
 G="\e[32m"
 N="\e[0m"
 
 while IFS= read -r line
 do
-usage=$(echo $line | grep xfs | awk -F " " '{print $6F}' | cut -d "%" -f1)
-Partition=$(echo $line | grep xfs | awk -F " " '{print $NF}')
+usage=$(echo $line | awk -F " " '{print $6F}' | cut -d "%" -f1)
+Partition=$(echo $line | awk -F " " '{print $NF}')
 
 if [ $usage -gt $Threshold ]
 then
@@ -31,3 +32,15 @@ done <<< $DISK_USAGE
 
 
 
+
+
+
+
+# while IFS= read -r line
+# do
+# used=$(echo $line | awk -F " " '{print $6F}' | cut -d "%" -f1)
+# mountedon=$(echo $line | awk -F " " '{print $NF}')
+# if [ $used -gt $Threshold ]
+# echo "Filesystems which has used more than $Threshold % which are mounted on $mountedon "
+# fi
+# done <<< $DISK_USAGE
