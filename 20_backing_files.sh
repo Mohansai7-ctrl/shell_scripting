@@ -5,7 +5,7 @@ DESTINATION_DIR=$2
 DAYS=${3:-14} #Here user can provide $3 as optional, if user didnt provide this then 14 can be taken as default days
 
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
-ZIP_FILE="$DESTINATION_DIR-$TIMESTAMP.zip"
+ZIP_FILE="$DESTINATION_DIR/logs_backup-$TIMESTAMP.zip"
 
 R="\e[31m"
 G="\e[32m"
@@ -55,6 +55,7 @@ then
     if [ -f $ZIP_FILE ]
     then
         echo -e "$Y As zip file exists, going to delete older files from source directory $N"
+        sudo chmod +x .log
         while IFS= read -r file
         do
         echo "As zipping to destination folder done, now deleting these older files from source directory"
