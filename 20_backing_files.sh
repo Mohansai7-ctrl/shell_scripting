@@ -51,7 +51,7 @@ LOG_FILES=$(find ${SOURCE_DIR} -name "*.log" -mtime +14)
 if [ ! -z "$LOG_FILES" ]
 then
     echo -e "$G Yes, this directory consists of older files which are more than $DAYS $N"
-    $LOG_FILES | zip "$ZIP_FILE" -@
+    find ${SOURCE_DIR} -name "*.log" -mtime +14 | zip "$ZIP_FILE" -@
     if [ -f $ZIP_FILE ]
     then
         echo -e "$Y As zip file exists, going to delete older files from source directory $N"
