@@ -23,13 +23,14 @@ CHECKS(){
 INPUTS(){
     echo -e "$R You have to provide minimum two arguments in this format: <sh 20_backing up the log files.sh> <Source directory path> <Destination directory path> <files which are older than no of days(optional)> $N "
     exit 1
-        
+
     
 }
 
 if [ $# -lt 2 ]
 then
     INPUTS
+    
 else
     echo -e "$G As provided required arguments, hence proceeding further $N "
 fi
