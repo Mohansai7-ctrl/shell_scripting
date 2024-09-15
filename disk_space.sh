@@ -60,7 +60,7 @@ do
     
     fi 
 
-done <<< $DISK_FILES &>> $LOG_FILE
+done <<< $DISK_FILES #&>> $LOG_FILE
 
 
 
