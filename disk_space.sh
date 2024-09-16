@@ -48,10 +48,11 @@ while IFS= read -r line
 do
 DISK_PERCENTAGE=$(echo $line | awk -F " " '{print $6F}' | cut -d "%" -f1)
 PARTITION=$(echo $line | awk -F " " '{print $NF }')
+FILE_SYSTEMS=$(echo $line | cut -d " " -f1)
 
 if [ ${DISK_PERCENTAGE} -gt ${THRESHOLD} ]
 then    
-    echo -e "$Y need to check these xfs files as having more than threshold $PARTITION $N"
+    echo -e "$Y need to check these xfs filesystems $FILE_SYSTEMS as having more disk usage% $DISK_PERCENTAGE than threshold percentage $THRESHOLD Which are mounted on $PARTITION $N"
     # echo "files are $line "
     # VALIDATE $? "File listing"
 
