@@ -46,19 +46,19 @@ fi
 
 while IFS= read -r line
 do
-    DISK_PERCENTAGE=$(echo $line | awk -F " " '{print $6F}' | cut -d "%" -f1)
-    DISK_FILE=$(echo $line | awk -F " " '{print $NF }')
+DISK_PERCENTAGE=$(echo $line | awk -F " " '{print $6F}' | cut -d "%" -f1)
+DISK_FILE=$(echo $line | awk -F " " '{print $NF }')
 
-    if [ $DISK_PERCENTAGE -gt $THRESHOLD ]
-    then    
-        echo -e "$Y need to check these xfs files as having more than threshold $DISK_FILE $N"
-        echo "files are $file "
-        VALIDATE $? "File listing"
+if [ $DISK_PERCENTAGE -gt $THRESHOLD ]
+then    
+    echo -e "$Y need to check these xfs files as having more than threshold $DISK_FILE $N"
+    echo "files are $file "
+    VALIDATE $? "File listing"
 
-    else  
-        echo -e "$B no files are greater than threshold, hence safe $N"
-    
-    fi 
+else  
+    echo -e "$B no files are greater than threshold, hence safe $N"
+
+fi 
 
 done <<< $DISK_FILES #&>> $LOG_FILE
 
