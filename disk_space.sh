@@ -42,14 +42,14 @@ else
 
 fi
 
-
+echo -e "$Y Total xfs filesystems are $DISK_FILES $N"
 
 while IFS= read -r line
 do
 DISK_PERCENTAGE=$(echo $line | awk -F " " '{print $6F}' | cut -d "%" -f1)
 PARTITION=$(echo $line | awk -F " " '{print $NF }')
 FILE_SYSTEMS=$(echo $line | cut -d " " -f1)
-echo -e "$Y Total xfs filesystems are $DISK_FILES $N"
+
 
 if [ ${DISK_PERCENTAGE} -gt ${THRESHOLD} ]
 then    
