@@ -52,12 +52,12 @@ FILE_SYSTEMS=$(echo $line | cut -d " " -f1)
 
 if [ ${DISK_PERCENTAGE} -gt ${THRESHOLD} ]
 then    
-    echo -e "$Y need to check these xfs filesystems $FILE_SYSTEMS as having more disk usage% $DISK_PERCENTAGE than threshold percentage $THRESHOLD Which are mounted on $PARTITION $N"
+    echo -e "$R need to check these xfs filesystems $FILE_SYSTEMS as having more disk usage% $DISK_PERCENTAGE than threshold percentage $THRESHOLD Which are mounted on $PARTITION $N"
     # echo "files are $line "
     # VALIDATE $? "File listing"
 
 else  
-    echo -e "$Y these xfs filesystems $FILE_SYSTEMS dont have more disk usage% $DISK_PERCENTAGE than threshold percentage $THRESHOLD Which are mounted on $PARTITION $N"
+    echo -e "$G these xfs filesystems $FILE_SYSTEMS dont have more disk usage% $DISK_PERCENTAGE than threshold percentage $THRESHOLD Which are mounted on $PARTITION $N"
     
 fi 
 
