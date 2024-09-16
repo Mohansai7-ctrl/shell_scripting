@@ -44,7 +44,7 @@ fi
 
 
 
-while IFS=read -r line
+while IFS= read -r line
 do
     DISK_PERCENTAGE=$(echo $line | awk -F " " '{print $6F}')
     DISK_FILE=$(echo $line | awk -F " " '{print $NF }')
