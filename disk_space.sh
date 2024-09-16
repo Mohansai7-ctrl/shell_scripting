@@ -56,9 +56,9 @@ then
     # echo "files are $line "
     # VALIDATE $? "File listing"
 
-# else  
-#     echo -e "$B no files are greater than threshold, hence safe $N"
-
+else  
+    echo -e "$Y these xfs filesystems $FILE_SYSTEMS dont have more disk usage% $DISK_PERCENTAGE than threshold percentage $THRESHOLD Which are mounted on $PARTITION $N"
+    
 fi 
 
 done <<< $DISK_FILES #&>> $LOG_FILE
