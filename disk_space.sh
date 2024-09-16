@@ -52,11 +52,11 @@ PARTITION=$(echo $line | awk -F " " '{print $NF }')
 if [ ${DISK_PERCENTAGE} -gt ${THRESHOLD} ]
 then    
     echo -e "$Y need to check these xfs files as having more than threshold $PARTITION $N"
-    echo "files are $line "
-    VALIDATE $? "File listing"
+    # echo "files are $line "
+    # VALIDATE $? "File listing"
 
-else  
-    echo -e "$B no files are greater than threshold, hence safe $N"
+# else  
+#     echo -e "$B no files are greater than threshold, hence safe $N"
 
 fi 
 
