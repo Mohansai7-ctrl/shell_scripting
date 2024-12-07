@@ -1,6 +1,6 @@
 #!/bin/bash
 
-userid=(id -u)
+userid=$(id -u)
 
 R="\e[31m"
 G="\e[32m"

@@ -27,6 +27,31 @@ fi
 
 done <<< $DISK_USAGE
 
+#!/bin/bash
+
+# Threshold for disk usage (in percentage)
+THRESHOLD=80
+
+# Email configurations
+TO_EMAIL="admin@example.com"
+SUBJECT="Disk Usage Alert"
+
+# Get disk usage information
+df -H | grep -vE '^Filesystem|tmpfs|cdrom' | awk '{ print $5 " " $6 }' | while read -r output; do
+    # Extract the usage percentage and mount point
+    USAGE=$(echo "$output" | awk '{ print $1 }' | sed 's/%//')
+    MOUNT_POINT=$(echo "$output" | awk '{ print $2 }')
+    
+    # Check if usage exceeds threshold
+    if [ "$USAGE" -ge "$THRESHOLD" ]; then
+        MESSAGE="Warning: Disk usage on $MOUNT_POINT has reached ${USAGE}%."
+        
+        # Send email alert
+        echo "$MESSAGE" | mail -s "$SUBJECT" "$TO_EMAIL"
+    fi
+done
+
+
 
 
 

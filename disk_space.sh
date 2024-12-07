@@ -14,9 +14,9 @@ N="\e[0m"
 
 mkdir -p /var/logs/expense
 LOGS_FOLDER="/var/logs/expense"
-SCRIPT_NAME="(echo $0 | awk -F "." '{print 1F}')"
+SCRIPT_NAME=$(echo $0 | awk -F "." '{print $1F}')
 TIMESTAMP=$(date +%Y-%h-%m-%H-%M-%S)
-LOG_FILE=($LOGS_FOLDER/$SCRIPT_NAME/$TIMESTAMP-app.log)
+LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME/$TIMESTAMP-app.log"
 THRESHOLD=5
 
 DISK_FILES=$(df -hT | grep xfs)
@@ -62,7 +62,7 @@ else
     
 fi 
 
-done <<< $DISK_FILES #&>> $LOG_FILE
+done <<< $DISK_FILES #&>>$LOG_FILE
 
 
 
